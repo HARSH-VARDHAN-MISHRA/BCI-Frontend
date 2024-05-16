@@ -1,0 +1,65 @@
+footer{
+    background: var(--color-main);
+    color: white;
+    padding-top: 2rem;
+    margin-top: 5rem;
+}
+footer .logo h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+footer .logo h1 span{
+    font-size: 1rem;
+    display: block;
+    font-weight: 500;
+}
+footer .social-links i{
+    font-size: 1.1rem;
+    color: white;
+    background: var(--color-yellow);
+    margin-top: 0.5rem;
+    padding: 5px 8px;
+    margin-right: 0.5rem;
+}
+footer .foot-head {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-bottom: 0.3rem;
+}
+footer ul{
+    padding-left: 0rem;
+}
+footer ul li{
+    list-style-type: none !important;
+}
+footer ul li a{
+    color: white;
+    display: block;
+    padding: 0.2rem 0rem;
+    transition: var(--transition-3);
+    text-decoration: none;
+    text-transform: capitalize;
+}
+footer ul li a:hover{
+    padding-left: 0.3rem;
+    color: whitesmoke;
+    text-decoration: underline;
+}
+footer ul li a i{
+    padding-right: 0.5rem;
+    font-size: 1.1rem;
+    width: 2rem;
+}
+footer .copyright{
+    border-top: 1px solid white;
+    padding: 1rem 0rem;
+}
+footer .copyright a{
+    text-decoration: underline;
+    color: white;
+}
+
+
+
+
+

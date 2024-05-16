@@ -1,0 +1,124 @@
+/* --- category-grid ----  */
+.categories{
+    background: var(--bg-white);
+    padding-top: 3rem;
+}
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+.category-grid .single-categ {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    border: 3px solid white;
+    transition: var(--transition-3);
+}
+
+.category-grid .single-categ img {
+    display: block;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: var(--transition-3);
+}
+
+.category-grid .single-categ .category-name {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    background: var(--color-main);
+    width: 90%;
+    opacity: 0.9;
+    text-align: center;
+    padding: 0.3rem 0;
+    margin: auto;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    transition: var(--transition-3);
+}
+
+.category-grid .single-categ:hover img{
+    scale: 1.1;
+}
+.category-grid .single-categ:hover .category-name{
+    bottom: 8%;
+}
+
+/* .category-grid .single-categ .layer {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.category-grid .single-categ .layer:hover {
+    background-color: rgba(226, 0, 0, 0.7);
+}
+
+.category-grid .single-categ .layer p {
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    text-transform: capitalize;
+    font-style: italic;
+}
+.category-grid .single-categ .layer:hover p {
+    bottom: 49%;
+    opacity: 1;
+}
+
+.category-grid .single-categ .layer p i{
+    font-size: 1.5rem;
+    border: 2px solid white;
+    padding: 0.5rem;
+    transition: var(--transition-3);
+}
+.category-grid .single-categ .layer p i:hover{
+    font-size: 1.5rem;
+    border: 2px solid var(--color-main);
+    color: var(--color-main);
+    background: white;
+    padding: 0.5rem;
+} */
+
+@media only screen and (max-width: 1000px){
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+}
+@media only screen and (max-width: 600px){
+    .category-grid .single-categ img {
+        height: 250px;
+        object-fit: contain;
+    }
+}
+@media only screen and (max-width: 420px){
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 1rem;
+    }
+    .category-grid .single-categ .category-name {
+        bottom: 5%;
+        width: 80%;
+    }
+}

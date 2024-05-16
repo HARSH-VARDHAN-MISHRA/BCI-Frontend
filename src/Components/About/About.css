@@ -1,0 +1,76 @@
+.about .content{
+    background: var(--bg-white);
+    padding: 1rem;
+}
+.about h2{
+    color: var(--color-dark-blue);
+}
+.about h2 i{
+    color: var(--color-blu);
+}
+.about strong{
+    color: var(--color-main);
+    font-weight: 500;
+}
+.about h4{
+    color: var(--color-main);
+    margin-bottom: 1rem;
+}
+.about .grid .single h6{
+    padding: 0.5rem;
+    text-transform: capitalize;
+    margin: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+
+/* -----------  */
+.about-p h4{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--color-main);
+    margin-bottom: 1rem;
+}
+.about-p h4 span{
+    position: relative;
+}
+.about-p h4 span:before{
+    position: absolute;
+    content: "";
+    height: 3px ;
+    width: 80%;
+    background: var(--color-main-light);
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+}
+.about-p ul strong{
+    color: var(--color-main);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 420px){
+    .about h4 {
+        color: var(--color-main);
+        margin-bottom: 0rem;
+    }
+    .about .grid .single h6 {
+        margin: 0rem;
+    }
+    .about .grid .single.col-6 {
+        flex: 0 0 auto;
+        width: 100% !important;
+        margin-bottom: 0.2rem;
+    }
+    .about img{
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+
+
+
+

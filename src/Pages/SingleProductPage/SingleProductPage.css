@@ -1,0 +1,27 @@
+.product-page .images{
+    margin-bottom: 1rem;
+}
+
+.product-page .main-img img{
+    height: 25rem;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.product-page h2{
+    color: var(--color-main);
+}
+.product-page h4{
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-main-light);
+}
+.product-page table {
+    width: 80%;
+}
+
+@media only screen and (max-width: 600px){
+    .product-page table {
+        width: 100%;
+    }
+}
