@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 const Footer = () => {
+  const [category,setCategory] = useState([]);
+
+  const handleFetch = async ()=>{
+      try {
+          const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-all-category`);
+          console.log(res.data.data);
+          setCategory(res.data.data);
+      } catch (error) {
+          console.log(error);
+      }
+  }
+  useEffect(()=>{
+      handleFetch();
+  },[])
   return (
     <>
       <footer>
@@ -22,9 +37,9 @@ const Footer = () => {
             <div className="col-md-4 col-sm-6 mb-3">
               <div className="foot-head">Our Products</div>
               <ul>
-                <li><Link to={'/product-page'}>Brass precision turned</Link></li>
-                <li><Link to={'/product-page'}>Bronze plumbing</Link></li>
-                <li><Link to={'/product-page'}>Stainless steel pipe</Link></li>
+                {category && category.map((item, index) => (
+                    <li><Link to={`/category/${item.categoryName}`} key={index}>{item.categoryName}</Link></li>
+                ))}
               </ul>
             </div>
             <div className="col-md-2 col-sm-6 mb-3">

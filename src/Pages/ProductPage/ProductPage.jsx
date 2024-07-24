@@ -22,7 +22,7 @@ const ProductPage = () => {
         behavior: "smooth"
     })
     handleFetch();
-  }, [])
+  }, [name])
   return (
     <>
       {console.log(categoryProduct)}

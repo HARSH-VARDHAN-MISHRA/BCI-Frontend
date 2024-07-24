@@ -32,7 +32,7 @@ const SingleProductPage = () => {
             behavior: "smooth"
         });
         handleFetch();
-    }, [])
+    }, [categoryNaam , name])
 
     return (
         <>
