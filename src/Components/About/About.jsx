@@ -9,6 +9,8 @@ import fire from './fire-fighting.png'
 import oilGas from './oil-gas.png'
 import sanitary from './plumbing-sanitary.png'
 
+import side from './side.jpg'
+
 const About = () => {
     const serviceData = [
         {
@@ -54,7 +56,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="col-md-4 mb-5">
-                        <img src="https://i.ibb.co/f0cvfQ5/Marine-bronze-fitting-Male-hose-nipple-and-male-hose-elbow-5.jpg" alt="about-us" />
+                        <img src={side} alt="about-us" />
                     </div>
                 </div>
             </div>
