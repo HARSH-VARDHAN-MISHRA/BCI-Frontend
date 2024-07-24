@@ -48,8 +48,10 @@ const HomePage = () => {
             </div> */}
 
 
-
+            <div className="mt-5">
             <About/>
+
+            </div>
 
             <LineHead title={"Our Products"}/>
             <CategorySection/>

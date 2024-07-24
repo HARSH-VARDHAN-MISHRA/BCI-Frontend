@@ -20,7 +20,7 @@ const AddProduct = () => {
     const fetchData = async () => {
       try {
         const [categoriesRes] = await Promise.all([
-          axios.get('https://bci-backend.onrender.com/api/v1/get-all-category')
+          axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-all-category`)
         ]);
         setCategories(categoriesRes.data.data.map(item => item.categoryName));
       } catch (error) {
@@ -46,7 +46,7 @@ const AddProduct = () => {
     event.preventDefault();
     console.log(formData)
     try {
-      const response = await axios.post('https://bci-backend.onrender.com/api/v1/create-product', formData);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create-product`, formData);
       // console.log(response.data);
       toast.success('Product Added Successfully !!');
       window.location.href = '/all-products';

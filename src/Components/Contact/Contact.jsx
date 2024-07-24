@@ -1,7 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+
 const Contact = () => {
+    const [loading, setLoading] = useState(false);
+    const [sended, setSended] = useState(false);
+    const [formData, setFormData] = useState({
+        firstName: '',
+        email_id: '',
+        address: ''
+    })
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
+
+    const handleSubmit = async (event) => {
+        setLoading(true);
+        event.preventDefault();
+        try {
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/apply-enquiry`, formData);
+            toast.success(res.data.message);
+            setFormData({
+                firstName: '',
+                email_id: '',
+                address: ''
+            })
+            setSended(true);
+        } catch (error) {
+            console.error("Error while submitting the form", error.response.data);
+            toast.error(error.response?.data?.message || "Something went wrong");
+        } finally {
+            setLoading(false);
+        }
+    }
+
   return (
     <>
         <section id="contact" className="bg-light">
@@ -25,20 +65,29 @@ const Contact = () => {
                         </div>
                         <div className="col-md-6">
                             <div className="contact-form">
-                                <form action="https://formsubmit.co/Dinesh@Bharatcontrolindia.com" method="POST">
+                                <form className='row' onSubmit={handleSubmit}>
+                                {sended ? (
+                                    <div className="col-md-12 row">
+                                        <div className="col-md-12 mx-auto">
+                                            <div className="alert alert-info text-center" role="alert">
+                                                Inquiry Send Successfully !!
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                )
+                                    : ""
+                                }
                                     <div className="form-group">
-                                        <input type="text" name="Name" id="name" placeholder="Your Name" required />
+                                        <input type="text" name='firstName' value={formData.firstName} onChange={handleChange} placeholder="Your Name" required />
                                     </div>
                                     <div className="form-group">
-                                        <input type="email" name="Email" id="email" placeholder="Your Email" required />
+                                        <input type="email" name='email_id' value={formData.email_id} onChange={handleChange} placeholder="Your Email" required />
                                     </div>
                                     <div className="form-group">
-                                        <textarea  id="message" name="Message" rows="5" placeholder="Your Message" required></textarea>
+                                        <textarea  name='address' value={formData.address} onChange={handleChange} rows="5" placeholder="Your Message" required></textarea>
                                     </div>
-                                    <input type="hidden" name="_captcha" value="false" />
-                                    <input type="hidden" name="_next" value="https://bharatcontrolindia.com/contact-us" />
-                                    <input type="hidden" name="_template" value="table" />
-                                    <button type="submit" className="btn btn-primary">Send Message</button>
+                                    <button type="submit" className="btn btn-primary">{loading ? "Please Wait" : "Send Message"}</button>
                                 </form>
                             </div>
                         </div>

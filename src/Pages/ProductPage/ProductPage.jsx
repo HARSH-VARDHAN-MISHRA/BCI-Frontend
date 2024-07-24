@@ -9,7 +9,7 @@ const ProductPage = () => {
   const [categoryProduct,setCategoryProduct] = useState([]);
 
   const handleFetch = async ()=>{
-    const res = await axios.get("https://bci-backend.onrender.com/api/v1/get-all-product");
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-all-product`);
     console.log(res.data.data);
 
     const filterSingleCategory = res.data.data.filter(item => item.categoryName === name)
@@ -34,7 +34,7 @@ const ProductPage = () => {
                 <div className="product-grid">
                     {categoryProduct && categoryProduct.map((item,index)=>(
                         <Link to={`/category/${name}/${item.productName}`} key={index} className='single-pro-grid'>
-                            <div className="img">
+                            <div className="img" >
                                 <img src={item.productImage[0]} alt={item.productName} />
                             </div>
                             <div className="pro-name">{item.productName}</div>

@@ -1,0 +1,40 @@
+.login-container {
+    margin-top: 2rem;
+  }
+  
+  .login-form {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-input {
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    border-radius: 4px;
+  }
+  
+  .form-input.is-invalid {
+    border-color: #f44336;
+  }
+  
+  .invalid-feedback {
+    color: #f44336;
+    font-size: 0.875rem;
+  }
+  
+  .buttons {
+    margin-top: 1rem;
+  }
+  
+  .btn-success {
+    background-color: var(--color-main);
+    border-color: var(--color-main);
+  }
+  
+  .btn-success:hover {
+    background-color: var(--color-main-light);
+    border-color: var(--color-main-light);
+  }
+  

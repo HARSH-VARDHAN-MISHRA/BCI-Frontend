@@ -63,6 +63,14 @@ const handleLogOut =()=>{
                 <span className="navlink">All Products</span>
               </Link>
             </li>
+            <li className="item">
+              <Link to={'/all-enquiry'} className="nav_link">
+                <span className="navlink_icon">
+                <i class='bx bxs-message-rounded-dots'></i>
+                </span>
+                <span className="navlink">All Enquiry</span>
+              </Link>
+            </li>
           </ul>
           {/* <!-- Sidebar Open / Close --> */}
           <div className="bottom_content">

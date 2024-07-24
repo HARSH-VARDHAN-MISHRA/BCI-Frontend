@@ -20,7 +20,7 @@ const EditCategory = () => {
       }
     const handleFetch = async()=>{
         try {
-            const res = await axios.get('https://bci-backend.onrender.com/api/v1/get-all-category');
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-all-category`);
             // console.log(res.data.data)
             const product = res.data.data
             const fillterProduct = product.filter((item)=> item._id === id)
@@ -37,7 +37,7 @@ const EditCategory = () => {
     const handleSubmit = async(event)=>{
         event.preventDefault();
         try { 
-            const submitResponse = await axios.post(`https://bci-backend.onrender.com/api/v1/update-category/${id}`,formData);
+            const submitResponse = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/update-category/${id}`,formData);
             console.log(submitResponse)
             toast.success("Category Updated Successfully")
             window.location.href='/all-category'

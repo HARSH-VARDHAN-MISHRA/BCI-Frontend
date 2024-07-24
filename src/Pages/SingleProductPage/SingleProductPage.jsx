@@ -12,7 +12,7 @@ const SingleProductPage = () => {
     const [productMa, setProduct] = useState([]);
 
     const handleFetch = async () => {
-        const res = await axios.get("https://bci-backend.onrender.com/api/v1/get-all-product");
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-all-product`);
         console.log(res.data.data);
 
         const filterSingleProduct = res.data.data.filter(item => item.categoryName === categoryNaam && item.productName === name);
@@ -36,7 +36,7 @@ const SingleProductPage = () => {
 
     return (
         <>
-            {console.log(productMa)}
+            {/* {console.log(productMa)} */}
             <Breadcrumb title={name} middle={{ url: '/our-products', text: 'Our Products' }} last={name} />
 
             {productMa && productMa.map((productItem, productIndex) => (

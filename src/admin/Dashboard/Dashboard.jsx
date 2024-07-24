@@ -9,6 +9,7 @@ import AdminProductPage from '../Pages/AdminProductPage/AdminProductPage'
 import AddProduct from '../AddProduct/AddProduct'
 import EditProduct from '../editProduct/EditProduct'
 import DashPage from '../Pages/DashPage/DashPage'
+import AllEnquiry from '../Pages/Enquiry/Enquiry'
 
 const Dashboard = () => {
   return (
@@ -30,6 +31,7 @@ const Dashboard = () => {
                 <Route path={"/create-product"} element={<AddProduct/>}/>
                 <Route path={"/edit-product/:id"} element={<EditProduct/>}/>
 
+                <Route path={"/all-enquiry"} element={<AllEnquiry/>}/>
             </Routes>
         </div>
     </>

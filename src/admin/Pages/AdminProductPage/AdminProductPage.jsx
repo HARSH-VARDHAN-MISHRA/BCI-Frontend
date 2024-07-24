@@ -9,7 +9,7 @@ const AdminProductPage = () => {
 
     const handleFetch = async () => {
         try {
-            const res = await axios.get('https://bci-backend.onrender.com/api/v1/get-all-product');
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-all-product`);
             setproduct(res.data.data)
         } catch (error) {
             console.error(error)
@@ -21,7 +21,7 @@ const AdminProductPage = () => {
     }, [])
     const hadndleDelete = async (id) => {
         try {
-            const res = await axios.delete(`https://bci-backend.onrender.com/api/v1/delete-product/${id}`);
+            const res = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/delete-product/${id}`);
             toast.success("Product Deleted Successfully")
             console.log(res.data)
             handleFetch()
